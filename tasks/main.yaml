@@ -1,4 +1,4 @@
 ---
-- name: Place holder task for infoblox role.
+- name: Module Requirement.
   debug:
-    msg: "This is a placeholder task for infoblox role."
+    msg: "This role requires the Python requests module"
