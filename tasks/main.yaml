@@ -1,0 +1,4 @@
+---
+- name: Place holder task for infoblox role.
+  debug:
+    msg: "This is a placeholder task for infoblox role."
