@@ -3,6 +3,9 @@
   connection: local
   gather_facts: False
 
+  roles:
+    - { role: ansible-role-infoblox }
+
   tasks:
     - name: Add host
       infoblox:

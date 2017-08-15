@@ -1,5 +1,5 @@
 # ansible-infoblox
-Awesome infobox module for ansible
+Awesome infobox module for ansible... now wrapped in a role!
 
 ## Dependencies
 
@@ -10,7 +10,7 @@ sudo pip install requests
 
 ## Extensible Attributes
 
-Extensible attributes are supported in this client.  It should be noted that in WAPI versions before 1.2,  the field is named "extensible_attributes", whereas in version 1.2 and later, it is named "extattrs". 
+Extensible attributes are supported in this client.  It should be noted that in WAPI versions before 1.2,  the field is named "extensible_attributes", whereas in version 1.2 and later, it is named "extattrs".
 
 ## Infoblox Version Compatibility
 
@@ -21,7 +21,7 @@ This gem is known to be compatible with Infoblox versions 1.0 through 2.3.  Whil
 - get_network [network]
 - get_ipv6network [network]
 - get_range [start_addr, end_addr]
-- get_next_available_ip [network] | [start_addr, end_addr] 
+- get_next_available_ip [network] | [start_addr, end_addr]
 - get_host [hostname]
 - add_host [hostname, network] | [hostname, start_addr, end_addr]
 - add_ipv6host [hostname, network]
@@ -35,12 +35,21 @@ This gem is known to be compatible with Infoblox versions 1.0 through 2.3.  Whil
 
 get_next_available_ip and add_host can be used in either a Network or a Range on the Infoblox environment. Use the network parameter in the 192.168.1.0/24 or 192.168.1.0 format to reference a Network. Use the start_addr and end_addr parameters in the 192.168.0.1 format to reference a Range.
 
+### Install with Ansible Galaxy
+From the command line run...
+```
+ansible-galaxy install --roles-path ./roles git+https://github.com/ebsco/ansible-module-infoblox
+```
+
 ### Playbook example
 ```
 ---
 - hosts: localhost
   connection: local
   gather_facts: False
+
+  roles:
+    - { role: ansible-role-infoblox }
 
   tasks:
     - name: "Add host"

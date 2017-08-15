@@ -1,0 +1,4 @@
+---
+- name: Module Requirement.
+  debug:
+    msg: "This role requires the Python requests module"

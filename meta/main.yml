@@ -1,0 +1,12 @@
+galaxy_info:
+  author: Joan Miquel Luque Oliver (https://github.com/xoanmi)
+  description: Ansible role that allows use of infoblox module
+  issue_tracker_url: N/A
+  min_ansible_version: 2.0.0
+  platforms:
+  - name: EL
+    versions:
+    - 7
+  galaxy_tags:
+  - infoblox
+dependencies: []
